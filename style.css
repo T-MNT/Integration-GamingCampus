@@ -27,11 +27,17 @@ nav ul {
   color: rgb(34, 34, 34);
   margin: auto;
   list-style: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+nav ul li {
+  cursor: pointer;
 }
 
 header {
-  background: url(./assets/img/bg.jpg) fixed center/cover;
+  background: url(./assets/img/bg.jpg) center/cover;
+  background-position: center;
   height: 84vh;
   display: flex;
   align-items: center;
@@ -41,11 +47,12 @@ header {
 .main-header {
   text-align: center;
   padding: 70px;
+  width: 100%;
 }
 
 .main-header h1 {
   color: white;
-
+  user-select: none;
   text-transform: uppercase;
   font-size: 1.7rem;
 }
@@ -54,7 +61,7 @@ header {
   background: transparent;
   color: white;
   padding: 15px 25px;
-
+  cursor: pointer;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.1rem;
@@ -72,7 +79,8 @@ header {
 .header-text {
   background: rgb(216, 216, 216);
   margin: 0;
-  height: 10vh;
+
+  padding: 35px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +89,8 @@ header {
 .header-text p {
   margin: 0;
   font-size: 1.1rem;
-  width: 70%;
+  font-weight: bold;
+  width: 60%;
   text-align: center;
   line-height: 30px;
   color: rgb(34, 34, 34);
@@ -89,16 +98,16 @@ header {
 
 .icon-part {
   background: rgba(11, 11, 11, 0.955);
-  height: 40vh;
-  min-height: 400px;
+
+  display: flex;
+  align-items: center;
   color: white;
-  padding: 50px 0px;
+  padding: 80px 0px;
 }
 
 .icon-part-container {
-  height: 100%;
   width: 80%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-around;
   text-align: center;
@@ -110,7 +119,7 @@ header {
 }
 
 .list-icon-part {
-  height: 100%;
+  height: 400px;
   width: 250px;
   position: relative;
 }
@@ -193,6 +202,7 @@ header {
 
 .main-news-container > div {
   width: 25%;
+  min-width: 230px;
   max-width: 350px;
   position: relative;
 }
@@ -223,7 +233,7 @@ header {
 }
 .contact-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -237,7 +247,7 @@ header {
 }
 
 .list {
-  width: 250px;
+  width: 200px;
 }
 
 .list h5 {
@@ -293,7 +303,7 @@ footer {
   color: white;
   text-transform: uppercase;
   text-align: center;
-  padding: 20px 0px;
+  padding: 30px 0px;
   font-size: 1.2rem;
   font-weight: 100;
 }
@@ -306,7 +316,132 @@ footer h3 {
 footer ul {
   list-style: none;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 80%;
   margin: 0px auto;
+  padding: 0;
+}
+
+@media screen and (max-width: 1255px) {
+  .contact-container {
+    width: 80%;
+  }
+  footer ul {
+    width: 90%;
+  }
+  .contact-medias {
+    grid-template-columns: 20% 80%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .header-news {
+    width: 90%;
+  }
+  .main-news-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  nav ul {
+    width: 95%;
+  }
+  .icon-part {
+    padding: 40px 0px;
+  }
+  .icon-part-container {
+    flex-direction: column;
+  }
+  .icon-part-container div:nth-child(2) {
+    margin: 40px 0px;
+  }
+  .list-icon-part {
+    height: 380px;
+  }
+  .contact-container {
+    width: 90%;
+  }
+  footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 980px) {
+  .icon-part-container {
+    width: 100%;
+    margin: 0;
+  }
+  .contact-container {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 920px) {
+  nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 880px) {
+  .header-news {
+    flex-direction: column;
+    text-align: center;
+  }
+  .left-part {
+    width: 100%;
+  }
+  .right-part {
+    width: 100%;
+  }
+  .main-news-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-news-container div {
+    margin: 10px 0px;
+    width: 100%;
+  }
+
+  .contact {
+    display: none;
+  }
+}
+@media screen and (max-width: 780px) {
+  header {
+    width: 100%;
+    height: 60vh;
+  }
+  .main-header {
+    padding: 0px;
+  }
+  .main-header h1 {
+    font-size: 1.3rem;
+  }
+
+  footer ul {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 625px) {
+  #logo img {
+    width: 100%;
+  }
+  .main-header button {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 485px) {
+  footer ul {
+    width: 98%;
+    padding: 0px 1%;
+  }
+}
+@media screen and (max-width: 385px) {
+  .main-header button {
+    font-size: 0.6rem;
+  }
 }
